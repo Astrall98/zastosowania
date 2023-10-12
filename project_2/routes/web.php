@@ -51,3 +51,5 @@ Route::get('/address/{city?}/{street?}/{postalCode?}', function(string $city = '
         Ulica: $street<hr>
     SHOW;
 });
+
+Route::redirect('/adres/{city?}/{street?}/{postalCode?}', '/address/{city?}/{street?}/{postalCode?}');
