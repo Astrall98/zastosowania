@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ShowController;
+use App\Http\Controllers\UserFormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,3 +55,9 @@ Route::get('/address/{city?}/{street?}/{postalCode?}', function(string $city = '
 });
 
 Route::redirect('/adres/{city?}/{street?}/{postalCode?}', '/address/{city?}/{street?}/{postalCode?}');
+
+Route::get('show', [ShowController::class, 'show']);
+Route::get('showData', [ShowController::class, 'showData']);
+
+Route::view('userform', 'forms.user_form');
+Route::get('UserFormController', [UserFormController::class, 'showForm']);
